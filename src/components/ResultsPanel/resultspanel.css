@@ -1,5 +1,13 @@
 .custom-container {
     background-color: white;
     margin-top: 30px;
-    
+}
+
+label {
+    padding: 10px;
+    text-align: left;
+}
+
+.box-custom {
+    float:inline-start;
 }

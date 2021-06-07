@@ -8,21 +8,26 @@ export const ResultsPanel = () => {
 
     return (
            
-        <div className="container custom-container">
-          <div className="row row-cols-6">
-          <h2>Results:</h2>
-          </div>
+        <div className="container custom-container" >
+          <div className="row">
+              <div className="col">
+                <div className="d-flex flex-row"><h2>Results:</h2></div>
+              </div>
+          <div className="row justify-content-center">
+          <div className="col-md-6">
+              {textsList.map((text, index) => (
+                <div className="box-custom" key={index}>
+                  <span className="border border-dark"><label>{text}</label></span>
+                </div>
+                
+                ))}
         
-        <div className="row row-cols-4">
-        <div className="col"></div>
-           <div className="col">
-         {textsList.map((text, index) => (
-          
-          <h3 key={index}> {text} </h3>
-          
-        ))}
+          </div>
+          </div>
+  
         </div>
-        </div>
+        
+
         </div>
 
     )

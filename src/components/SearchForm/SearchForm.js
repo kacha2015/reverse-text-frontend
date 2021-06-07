@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { TextsContext } from '../context/TextsContext';
-import { useFetchReverseText } from '../hooks/useFetchReverseText';
-import { getReverseText } from '../services/getReverseText';
+import { TextsContext } from '../../context/TextsContext';
+import { getReverseText } from '../../services/getReverseText';
+import './searchform.css';
 
 export const SearchForm = () => {
 
@@ -28,7 +28,7 @@ export const SearchForm = () => {
     
     return (
         <form className="d-flex" onSubmit={ handleSubmit }>
-            <input className="form-control me-2" 
+            <input className="form-control me-2 input-custom" 
                    type="search" 
                    placeholder="Insert text" 
                    aria-label="Search" 

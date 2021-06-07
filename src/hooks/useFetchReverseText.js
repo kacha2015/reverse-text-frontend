@@ -5,9 +5,10 @@ import { getReverseText } from '../services/getReverseText';
 
 export const useFetchReverseText = ( value ) => {
 
-    const data = getReverseText( value );
-
-    return data;
-
+  getReverseText(value).
+        then( ({ text }) => {
+    console.log(text);
+          return text;
+        });
 }
 
