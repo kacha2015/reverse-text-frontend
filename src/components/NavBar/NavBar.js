@@ -2,12 +2,12 @@ import React from 'react';
 import { SearchForm } from '../SearchForm';
 import './navbar.css';
 
-export const NavBar = () => {
+export const NavBar = (setTextsList) => {
     return (
     <div>
         <nav className="navbar navbar-custom-color">
-            <div className="container-fluid">
-                <SearchForm />
+            <div className="container-fluid justify-content-center">
+                <SearchForm setTextsList={setTextsList}/>
             </div>
         </nav>
     </div>

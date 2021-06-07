@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { TextsContext } from '../context/TextsContext';
+import { useFetchReverseText } from '../hooks/useFetchReverseText';
+import { getReverseText } from '../services/getReverseText';
 
 export const SearchForm = () => {
 
-    const [formState, setFormState ] = useState(
-        {
-            text: ''
-        }
-    );
-    const { text } = formState;
-    
-    const handleTextSearch = ( e ) => {
+    const [inputValue, setInputValue] = useState('');
+    const { textsList, setTextsList } = useContext(TextsContext);
+
+    const handleInputChange = ( e ) => {
+        setInputValue( e.target.value );
+    }
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        // { description !== '' && setTasksList([...tasksList, formState]); }
+
+        if ( inputValue.trim().length > 0 ) {
+            getReverseText(inputValue).
+                    then( ({ text }) => {
+                     
+                      setTextsList([ text, ...textsList]);
+            });
+            
+            setInputValue('');
+        }
     }
     
-    const handleChangeValue = ( { target } ) => {
-    
-            setFormState({
-                ...formState,
-                text: target.value
-            })
-     }
-    
     return (
-        <form className="d-flex" onSubmit={ handleTextSearch }>
-            <input className="form-control me-2" type="search" placeholder="Insert text" aria-label="Search" onChange={ handleChangeValue } />
+        <form className="d-flex" onSubmit={ handleSubmit }>
+            <input className="form-control me-2" 
+                   type="search" 
+                   placeholder="Insert text" 
+                   aria-label="Search" 
+                   value= { inputValue }
+                   onChange={ handleInputChange } />
             <button className="btn btn-primary" type="submit">Send</button>
         </form>
     )

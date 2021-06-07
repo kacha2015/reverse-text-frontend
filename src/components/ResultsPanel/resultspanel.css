@@ -1,7 +1,5 @@
-.custom-color-container {
-    background-color: grey;
-}
-
-.custom-panel {
-    background-color:white;
+.custom-container {
+    background-color: white;
+    margin-top: 30px;
+    
 }
