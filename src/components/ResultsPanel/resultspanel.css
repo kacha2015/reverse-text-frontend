@@ -11,3 +11,8 @@ label {
 .box-custom {
     float:inline-start;
 }
+
+.row-custom {
+    margin-bottom: 1rem;
+    text-align: left;
+}

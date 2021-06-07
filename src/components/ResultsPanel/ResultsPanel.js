@@ -14,20 +14,15 @@ export const ResultsPanel = () => {
                 <div className="d-flex flex-row"><h2>Results:</h2></div>
               </div>
           <div className="row justify-content-center">
-          <div className="col-md-6">
-              {textsList.map((text, index) => (
-                <div className="box-custom" key={index}>
-                  <span className="border border-dark"><label>{text}</label></span>
-                </div>
-                
-                ))}
-        
+              <div className="col-md-6">
+                  {textsList.map((text, index) => (
+                    <div className="row row-custom" key={index}>
+                      <span className="border border-dark"><label>{text}</label></span>
+                    </div> 
+                  ))}
+              </div>
           </div>
-          </div>
-  
-        </div>
-        
-
+         </div>
         </div>
 
     )
